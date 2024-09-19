@@ -13,6 +13,8 @@ const run = async () => {
   // Producing
   await producer.connect();
 
+  console.log("connected !!!");
+
   for (let i = 0; i < 10; i++) {
     await producer.send({
       topic: config.kafkaTopic,
