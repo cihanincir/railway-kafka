@@ -11,7 +11,11 @@ const producer = kafka.producer();
 
 const run = async () => {
   // Producing
-  await producer.connect();
+  try {
+    await producer.connect();
+  } catch(e) {
+    console.log(e)
+  }
 
   console.log("connected !!!");
 
